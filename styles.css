@@ -1,0 +1,419 @@
+* {
+  box-sizing: border-box;
+}
+
+.nav {
+  list-style-type: none;
+  text-align: center;
+  margin: 3% 10%;
+  padding: 0;
+}
+
+.nav li {
+  display: inline-block;
+}
+
+.firstpage {
+  margin-top: 50px;
+}
+
+
+.row::after {
+  content:"";
+  clear:both;
+  display:block;
+}
+
+[class*="col-"] {
+  float:left;
+  padding:15px;
+}
+
+.right {
+  padding-top:15px;
+  margin-top: 55px;
+  margin-left: -10%;
+}
+
+
+@media only screen and (max-width:991px){
+  .right {
+    padding:0;
+    margin-top: 20px;
+    margin-left: 0px;
+    margin-right:30px;
+  }
+}
+
+body {
+  background-color: #303030;
+  font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+  color: #F0E68C;
+  text-align: center;
+  font-family: 'Trocchi', serif;
+  text-shadow: 5px 5px 5px black;
+  font-size: 3em;
+  text-decoration: 4px underline;
+}
+
+p {
+  color: #AAF0C1;
+  text-align: center;
+  margin-left: 13%;
+  margin-right: 13%;
+  border-radius: 5px;
+  padding: 10px;
+  line-height: 2;
+  box-shadow: -2px 2px 10px 1px black;
+}
+
+.goback {
+  text-decoration: none;
+  color:#AAF0C1;
+  padding: 10px;
+  text-shadow: 3px 3px 5px black;
+}
+
+.footer {
+  background-color:#4d4d4f;
+  width:100%;
+  height: auto;
+  padding:3px;
+  position:fixed;
+  bottom: 0;
+  left:0px;
+  font-size:0.7em;
+}
+
+.footer p {
+  border: none;
+  padding: 0;
+  box-shadow: none;
+  background-color:#4d4d4f;
+  color:#AAF0C1;
+}
+
+@media only screen and (max-width: 991px) {
+  h1 {
+    font-size: 2em;
+    margin-top: 30px;
+  }
+
+  p {
+    font-size: 0.8em;
+    margin-top: 10px;
+    margin-left: 0px;
+    margin-right: 0px;
+    line-height: normal;
+  }
+
+  .footer {
+    margin:0;
+    height: 4%;
+    padding: 0;
+  }
+
+  .goback {
+    font-size: 0.7em;
+    padding: 0;
+  }
+
+}
+
+
+/* div with display flex that centers*/
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* score to be reworked to show how many words have been guessed out of 10. */
+.score {
+  color: #F0E68C;
+  /* height: 150px;
+  width:150px; */
+  font-size: 14px;
+  background-color:inherit;
+  /* border: 2px solid #AAF0C1;
+  border-radius:50%; */
+  display: inline-block;
+  padding: 5px;
+  margin-left: 20px;
+  margin-top: -30px;
+  opacity: 1;
+  position: absolute;
+  z-index: -1;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: -2px 2px 10px 1px black;
+}
+
+button {
+  color:black;
+  font-family: 'Trocchi', serif;
+  font-weight: bold;
+  background-color:#F0E68C;
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 5px 0px 10px black, 0 5px #AAF0C1;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  margin-top: 100px;
+}
+
+@media screen and (max-width:991px) {
+  button {
+    font-size: 0.7em;
+    padding: 5px 10px;
+    white-space: nowrap;
+    margin-top: 35px;
+  }
+
+  .score {
+    font-size: 8px;
+    margin-left:10px;
+  }
+}
+
+.glowbox {
+  animation-name: glowb;
+  animation-duration: 1s;
+  animation-delay: .1s;
+  animation-timing-function: ease;
+  animation-iteration-count: 2;
+  animation-direction:alternate;
+
+
+}
+@keyframes glowb {
+  from {box-shadow: 0px 0px 0px #AAF0C1;}
+  to {box-shadow: 2px 2px 10px #AAF0C1;}
+  transition: 2s;
+}
+
+@keyframes glowt {
+  from {text-shadow: 0px 0px 0px white;}
+  to{text-shadow: 0px 0px 5px #AAF0C1;}
+  transition: 2s;
+}
+
+@keyframes done {
+  from {text-shadow: 0px 0px 0px white;}
+  to{text-shadow: 0px 0px 5px #AAF0C1;}
+  transition: 2s;
+  from {box-shadow: 0px 0px 0px #AAF0C1;}
+  to {box-shadow: 2px 2px 5px #AAF0C1;}
+  transition: 2s;
+}
+
+.done {
+  animation-name: done;
+  animation-duration: 2s;
+  animation-delay:.1s;
+  animation-timing-function:ease;
+  animation-iteration-count: 2;
+  animation-direction: alternate;
+}
+
+.glowtext {
+  animation-name: glowt;
+  animation-duration: 1s;
+  animation-delay: .1s;
+  animation-timing-function: ease;
+  animation-iteration-count: 2;
+  animation-direction: alternate;
+}
+
+button:hover {
+  box-shadow: 5px 0px 15px black, 0 5px #AAF0C1;
+}
+
+button:active {
+  box-shadow: 5px 0px 15px black, 0 1px #AAF0C1;
+  transform: translateY(4px);
+}
+
+#kidspic {
+  border-radius: 10px;
+  box-shadow: -2px 2px 10px 1px black;
+  width:500px;
+  height:350px;
+  object-fit: cover;
+}
+
+@media only screen and (max-width:991px) {
+  #kidspic {
+    width:350px;
+    height:200px;
+    margin-top: 10;
+    margin-left: 15px;
+  }
+}
+
+
+p a {
+  color: #F0E68C;
+  text-decoration: underline;
+}
+
+
+/* ch unit = width  of the 0 character. It also assumes the font in the .word field is a monospace one so that all characters have the same width.
+So the width for every character is always 1ch. The gap between the characters is taken to be .5ch. This is the value we set for letter-spacing.
+The width of the .word is the number of characters times the sum between the letter width (1ch) and the gap width (.5ch). So that's 7*(1ch + .5ch) = 7*1.5ch = 10.5ch.
+We remove the actual border of the .word and we set a fake one using a repeating-linear-gradient. The dash goes from 0 to 1ch and the gap (transparent)
+starts immediately after the dash and goes to 1.5ch.
+It's attached to the left and the bottom of the .word - this is the background-position component (0% horizontally and 100% vertically).
+It spreads across the entire .word horizontally (100%) and is 2px tall - this is the background-size component of the background. */
+.word {
+  border: none;
+  width: 4.5ch;
+  background:
+    repeating-linear-gradient(90deg,
+        #F0E68C 0,
+        #F0E68C 1ch,
+        transparent 0,
+        transparent 1.52ch)
+      0 100%/100% 1px no-repeat;
+  color: white;
+  font: 5ch 'Roboto Mono', monospace;
+  letter-spacing: .5ch;
+  user-select: none;
+ -webkit-user-select: none;
+ -moz-user-select: none;
+ -ms-user-select: none;
+ margin-top: 7px;
+ font-weight: bold;
+}
+
+@media only screen and (max-width: 991px) {
+  .word {
+    font-size: 1.8em;
+    margin-top: 5px;
+    background:
+      repeating-linear-gradient(90deg,
+          #F0E68C 0,
+          #F0E68C 1ch,
+          transparent 0,
+          transparent 1.52ch)
+        0 100%/100% 1px no-repeat;
+  }
+}
+
+.word:focus {
+  outline: none;
+  user-select: none;
+}
+
+.word::selection {
+  background: transparent;
+}
+
+
+/* letter letters*/
+.letter {
+  background-color:#4d4d4f;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 25px;
+  padding: 5px;
+  color: #AAF0C1;
+  border-radius: 50%;
+  margin: 10px 5px;
+  text-align: center;
+  width:40px;
+  height: 45px;
+  cursor: default;
+  transition: font-size 1s;
+  box-shadow: 2px 7px 3px  black;
+  /*text-decoration: #DC143C line-through;*/
+}
+
+
+@media only screen and (max-width:991px) {
+  .letter {
+    font-size: 16px;
+    padding:10px;
+    width: 35px;
+    height:40px;
+    margin: 7px 3px;
+  }
+}
+
+li a {
+  text-decoration: none;
+  font-size: 60px;
+  border-radius: 5px;
+  color: black;
+  font-weight: 400;
+  font-family: 'Trocchi', serif;
+}
+
+.square {
+  height:90px;
+  width: 90px;
+  border: 5px solid #F0E68C;
+  border-radius: 5px;
+  box-shadow: -5px 5px 10px 5px black;
+  opacity: 0.7;
+  margin:10px;
+  background-color: #AAF0C1;
+}
+
+.square:hover {
+  opacity: 1;
+}
+
+@media only screen and (max-width:991px) {
+  .square {
+    height:50px;
+    width: 50px;
+    border: 2px solid #F0E68C;
+    margin:5px;
+  }
+
+  li a {
+    font-size: 40px;
+  }
+}
+
+.letter:active {
+  box-shadow: 2px 1px 3px black;
+  transform: translateY(4px);
+}
+
+.bordered {
+border: 1px solid  #AAF0C1;
+}
+
+
+/*For desktop*/
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+@media only screen and (max-width:991px) {
+  /*For mobile phones*/
+  [class*="col-"] {
+    width:100%;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  [class*="col-"] {
+    width: 100%;
+  }
+
+}
